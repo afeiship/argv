@@ -1,6 +1,7 @@
 (function() {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('next-js-core2');
+  var POPULATE_METHODS = ['set', 'sets', 'get', 'gets', 'clear', 'clears'];
 
   var NxWeappStore = nx.declare('nx.WeappStore', {
     properties: {
