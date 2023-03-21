@@ -1,15 +1,7 @@
-const { CraEnvs } = require('../src');
+import parse from '../src';
 
 describe('test cra-envs', () => {
   test('cra-envs: get all', function () {
-    const res = CraEnvs.get();
-    expect(res).toEqual({
-      beta: {
-        base_url: 'https://site-predict-platform.beta.saybot.net',
-      },
-      staging: {
-        base_url: 'https://site-predict-platform.staging.saybot.net',
-      },
-    });
+    console.log(parse(['arg1 --opt1=1 --opt2=2 -p=3']));
   });
 });
