@@ -1,33 +1,35 @@
 {
-  "name": "next-weapp-store",
-  "version": "0.0.1",
-  "description": "Weapp store for mobile based on next toolkit",
-  "homepage": "https://github.com/afeiship/next-weapp-store",
-  "author": {
-    "name": "afei",
-    "email": "1290657123@qq.com"
-  },
+  "name": "@jswork/argv",
+  "version": "1.0.0",
+  "description": "Tiny argv impl.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "gulp",
-    "test": "jest",
-    "version": "gulp bump"
+    "postbuild": "tsc --emitDeclarationOnly",
+    "build": "node esbuild.config.js",
+    "test": "jest"
   },
-  "main": "dist/next-weapp-store.js",
   "license": "MIT",
-  "devDependencies": {
-    "del": "^2.2.1",
-    "gulp": "^3.9.1",
-    "gulp-bump": "^2.7.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-load-plugins": "^1.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-size": "^2.1.0",
-    "gulp-uglify": "^2.1.2",
-    "jest": "^23.6.0",
-    "yargs": "^4.7.1"
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
-  "dependencies": {
-    "next-js-core2": "github:afeiship/next-js-core2",
-    "next-weapp-storage": "github:afeiship/next-weapp-storage"
+  "boilerplate": "generator-typescript",
+  "homepage": "https://js.work",
+  "devDependencies": {
+    "@jswork/banner-defaults": "^1.0.4",
+    "@jswork/next": "^1.0.9",
+    "@jswork/next-nice-comments": "^1.0.3",
+    "@types/jest": "^26.0.23",
+    "babel-jest": "^27.0.1",
+    "esbuild": "^0.14.38",
+    "esbuild-plugin-clean": "^0.9.0",
+    "esbuild-plugin-replace": "^1.2.0",
+    "esbuild-node-externals": "^1.4.1",
+    "jest": "^28.1.1",
+    "prettier": "^2.6.2",
+    "release-it": "^15.0.0",
+    "typescript": "^4.6.4"
   }
 }
