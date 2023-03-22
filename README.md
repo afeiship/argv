@@ -15,7 +15,10 @@ npm install @jswork/argv
 ```js
 import argv from '@jswork/argv';
 
-// usage goes here.
+// node index.js --name=afei --age=18 file1 file2
+const { args, opts } = argv();
+console.log(args); // [ 'file1', 'file2' ]
+console.log(opts); // { name: 'afei', age: '18' }
 ```
 
 ## license
