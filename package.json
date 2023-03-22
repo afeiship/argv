@@ -1,6 +1,6 @@
 {
   "name": "@jswork/argv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tiny argv impl.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -52,5 +52,11 @@
       ],
       "@babel/preset-typescript"
     ]
-  }
+  },
+  "keywords": [
+    "args",
+    "argv",
+    "mini",
+    "tiny"
+  ]
 }
