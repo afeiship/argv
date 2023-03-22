@@ -5,11 +5,13 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "dist",
     "pretty": true,
     "esModuleInterop": true,
     "skipDefaultLibCheck": true,
     "moduleResolution": "node",
     "noImplicitAny": false
-  }
+  },
+  "include": [
+    "src"
+  ]
 }

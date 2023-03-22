@@ -1,21 +1,22 @@
 export default (inArgv = process.argv.slice(2)) => {
   const args: string[] = [];
   const opts = {};
+  const parseArg = (arg: string): [string, boolean | string] => {
+    const [key, value] = arg.split('=');
+    const isUndefined = value === undefined;
+    return [key, isUndefined ? true : value];
+  };
 
-  let i = 0;
-  while (i < inArgv.length) {
-    const arg = inArgv[i];
-    if (arg.startsWith('--')) {
-      const [key, value] = arg.slice(2).split('=');
-      opts[key] = value || true;
-    } else if (arg.startsWith('-')) {
-      const [key, value] = arg.slice(1).split('=');
-      opts[key] = value || true;
+  inArgv.forEach((arg) => {
+    const isDblDash = arg.startsWith('--');
+    const isDash = arg.startsWith('-');
+    if (isDblDash || isDash) {
+      const [key, value] = parseArg(arg.slice(isDblDash ? 2 : 1));
+      opts[key] = value;
     } else {
       args.push(arg);
     }
-    i++;
-  }
+  });
 
   return {
     args,

@@ -1,7 +1,30 @@
 import parse from '../src';
 
-describe('test cra-envs', () => {
-  test('cra-envs: get all', function () {
-    console.log(parse(['arg1 --opt1=1 --opt2=2 -p=3']));
+describe('api.basic', () => {
+  test('parse --opts should be string or boolean', () => {
+    const parsed = parse(['--foo=bar', '--debug', '--baz=']);
+    console.log('parsed: ', parsed);
+    expect(parsed).toEqual({
+      args: [],
+      opts: {
+        foo: 'bar',
+        debug: true,
+        baz: '',
+      },
+    });
+  });
+
+  test('parse -opts should be string or boolean', () => {
+    const parsed = parse(['-f', '-d', '-b=']);
+    console.log('parsed: ', parsed);
+
+    expect(parsed).toEqual({
+      args: [],
+      opts: {
+        f: true,
+        d: true,
+        b: '',
+      },
+    });
   });
 });
